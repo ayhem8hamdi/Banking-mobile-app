@@ -1,5 +1,5 @@
+import 'package:banking_app/core/router/app_router.dart';
 import 'package:banking_app/core/theme/app_theme.dart';
-import 'package:banking_app/features/splash_onboarding/presentation/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
@@ -12,12 +12,12 @@ class BankingApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: SplashScreen(),
+      routerConfig: AppRouter.goRouter,
     );
   }
 }

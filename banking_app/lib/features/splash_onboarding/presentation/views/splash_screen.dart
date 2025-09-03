@@ -1,25 +1,27 @@
-import 'package:banking_app/core/utils/app_assets/image_assets.dart';
+import 'package:banking_app/core/router/app_router.dart';
+import 'package:banking_app/features/splash_onboarding/presentation/views/widgets/splash_screen_body.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 2), () {
+      if (!mounted) return;
+      context.goNamed(AppRouter.onBoardingScreen);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final bool isDark = Theme.of(context).brightness == Brightness.dark
-        ? true
-        : false;
-    final double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Center(
-        child: AspectRatio(
-          aspectRatio: 178 / 125.94,
-          child: Image.asset(
-            isDark ? ImageAssets.darkSplashLogo : ImageAssets.lightSplashLogo,
-            width: width * 0.95,
-          ),
-        ),
-      ),
-    );
+    return Scaffold(body: SafeArea(child: SplashScreenBody()));
   }
 }
