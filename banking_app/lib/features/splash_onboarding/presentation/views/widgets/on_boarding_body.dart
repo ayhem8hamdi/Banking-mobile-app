@@ -5,6 +5,9 @@ class OnBoardingBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Body"));
+    final size = MediaQuery.of(context).size;
+    final cs = Theme.of(context).colorScheme;
+
+    return Scaffold(body: Column());
   }
 }
