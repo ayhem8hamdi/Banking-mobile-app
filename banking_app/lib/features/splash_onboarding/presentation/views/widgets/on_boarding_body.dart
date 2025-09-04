@@ -1,9 +1,7 @@
 import 'package:banking_app/core/shared_widgets/app_button.dart';
-import 'package:banking_app/core/utils/styles/app_styles.dart';
+import 'package:banking_app/features/splash_onboarding/presentation/views/widgets/on_boarding_content_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingBody extends StatelessWidget {
   final String image;
@@ -28,7 +26,6 @@ class OnBoardingBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
     return Stack(
       children: [
         Padding(
@@ -36,48 +33,15 @@ class OnBoardingBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Gap(60),
-              Center(
-                child: SizedBox(
-                  width: size.width * 0.85,
-                  child: AspectRatio(
-                    aspectRatio: 335 / 275,
-                    child: SvgPicture.asset(image, fit: BoxFit.contain),
-                  ),
-                ),
-              ),
+              const Gap(40),
+              OnBoardingImage(size: size, image: image),
               const Flexible(child: Gap(41)),
-              Center(
-                child: SmoothPageIndicator(
-                  controller: pageController,
-                  count: pageCount,
-                  effect: const ExpandingDotsEffect(
-                    dotHeight: 8,
-                    dotWidth: 8,
-                    activeDotColor: Colors.blue,
-                    dotColor: Colors.grey,
-                  ),
-                ),
+              DotsIndicators(
+                pageController: pageController,
+                pageCount: pageCount,
               ),
               const Flexible(child: Gap(36)),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      title,
-                      style: AppStyles.styleSemiBold26(context),
-                    ),
-                  ),
-                  const SizedBox(height: 18),
-                  Text(
-                    description,
-                    textAlign: TextAlign.center,
-                    style: AppStyles.styleRegular14(context),
-                  ),
-                ],
-              ),
+              OnBoardingTitleAndCaption(title: title, description: description),
               const Spacer(),
             ],
           ),
@@ -86,7 +50,7 @@ class OnBoardingBody extends StatelessWidget {
         Positioned(
           left: 22,
           right: 22,
-          bottom: 35,
+          bottom: 10,
           child: AppButton(
             text: currentPage == pageCount - 1 ? "Get Started" : "Next",
             onPressed: onNextPressed,

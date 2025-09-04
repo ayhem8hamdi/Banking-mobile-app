@@ -18,26 +18,26 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
       "image": ImageAssets.onboarding1,
       "title": "Fastest Payment in the world",
       "description":
-          "Built-in Fingerprint, face recognition and more, keeping you completely safe",
+          "Integrate multiple payment methoods to help you up the process quickly",
     },
     {
       "image": ImageAssets.onboarding2,
-      "title": "Easy Money Transfer",
+      "title": "The most Secoure Platfrom for Customer",
       "description":
-          "Send and receive money instantly, with just a few taps on your phone.",
+          "Built-in Fingerprint, face recognition and more, keeping you completely safe",
     },
     {
       "image": ImageAssets.onboarding3,
-      "title": "Track Your Spending",
+      "title": "Paying for Everything is Easy and Convenient",
       "description":
-          "Monitor your expenses in real-time and stay on top of your financial health.",
+          "Built-in Fingerprint, face recognition and more, keeping you completely safe",
     },
   ];
 
   void _onNextPressed() {
     if (_currentPage < _pages.length - 1) {
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     } else {
@@ -47,26 +47,24 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView.builder(
-        controller: _pageController,
-        itemCount: _pages.length,
-        onPageChanged: (index) {
-          setState(() => _currentPage = index);
-        },
-        itemBuilder: (context, index) {
-          final page = _pages[index];
-          return OnBoardingBody(
-            image: page["image"]!,
-            title: page["title"]!,
-            description: page["description"]!,
-            pageController: _pageController,
-            pageCount: _pages.length,
-            currentPage: _currentPage,
-            onNextPressed: _onNextPressed,
-          );
-        },
-      ),
+    return PageView.builder(
+      controller: _pageController,
+      itemCount: _pages.length,
+      onPageChanged: (index) {
+        setState(() => _currentPage = index);
+      },
+      itemBuilder: (context, index) {
+        final page = _pages[index];
+        return OnBoardingBody(
+          image: page["image"]!,
+          title: page["title"]!,
+          description: page["description"]!,
+          pageController: _pageController,
+          pageCount: _pages.length,
+          currentPage: _currentPage,
+          onNextPressed: _onNextPressed,
+        );
+      },
     );
   }
 }
