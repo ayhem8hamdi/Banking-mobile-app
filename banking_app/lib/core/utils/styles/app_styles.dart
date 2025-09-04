@@ -9,26 +9,19 @@ abstract class AppStyles {
       _baseCairo(context).copyWith(
         color: Theme.of(context).colorScheme.onSurface,
         fontSize: ResponsiveFont.responsiveFontSize(context, 26),
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       );
 
-  static TextStyle styleBold17(BuildContext context) =>
-      _baseCairo(context).copyWith(
-        color: Theme.of(context).colorScheme.onSurface,
-        fontSize: responsiveFontSize(context, fontSize: 19),
-        fontWeight: FontWeight.w700,
-      );
-
-  static TextStyle styleSemiBold15(BuildContext context) =>
-      _baseCairo(context).copyWith(
-        color: Theme.of(context).colorScheme.onSurface,
-        fontSize: responsiveFontSize(context, fontSize: 15.4),
-        fontWeight: FontWeight.w500,
-      );
-  static TextStyle styleRegular15(BuildContext context) =>
+  static TextStyle styleRegular14(BuildContext context) =>
       _baseCairo(context).copyWith(
         color: Theme.of(context).colorScheme.onSecondary,
-        fontSize: responsiveFontSize(context, fontSize: 14),
+        fontSize: ResponsiveFont.responsiveFontSize(context, 14),
         fontWeight: FontWeight.w400,
+      );
+  static TextStyle styleSemiBold16(BuildContext context) =>
+      _baseCairo(context).copyWith(
+        color: Theme.of(context).colorScheme.onPrimary,
+        fontSize: ResponsiveFont.responsiveFontSize(context, 16),
+        fontWeight: FontWeight.w600,
       );
 }
