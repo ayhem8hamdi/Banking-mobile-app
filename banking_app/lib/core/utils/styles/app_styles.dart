@@ -15,7 +15,7 @@ abstract class AppStyles {
   static TextStyle styleRegular14(BuildContext context) =>
       _baseCairo(context).copyWith(
         color: Theme.of(context).colorScheme.onSecondary,
-        fontSize: ResponsiveFont.responsiveFontSize(context, 14),
+        fontSize: ResponsiveFont.responsiveFontSize(context, 14.5),
         fontWeight: FontWeight.w400,
       );
   static TextStyle styleSemiBold16(BuildContext context) =>

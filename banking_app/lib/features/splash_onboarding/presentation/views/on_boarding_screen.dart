@@ -1,4 +1,3 @@
-import 'package:banking_app/features/splash_onboarding/presentation/views/widgets/on_boarding_body.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -6,6 +5,6 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SafeArea(child: OnBoardingBody()));
+    return Scaffold(body: SafeArea(child: Container()));
   }
 }
