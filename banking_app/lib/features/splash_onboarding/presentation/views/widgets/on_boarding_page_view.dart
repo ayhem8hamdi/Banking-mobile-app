@@ -1,3 +1,4 @@
+import 'package:banking_app/core/constants/constants.dart';
 import 'package:banking_app/core/router/app_router.dart';
 import 'package:banking_app/core/services/shared_prefs.dart';
 import 'package:banking_app/core/utils/app_assets/image_assets.dart';
@@ -45,7 +46,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
       );
     } else {
       context.goNamed(AppRouter.signInScreen);
-      SharedPrefsSingelton.setBool('isOnBoardingSeen', true);
+      SharedPrefsSingelton.setBool(kOnBoardingSharedPrefsKey, true);
     }
   }
 

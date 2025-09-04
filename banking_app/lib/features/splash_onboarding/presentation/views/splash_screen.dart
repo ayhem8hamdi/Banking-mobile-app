@@ -1,3 +1,4 @@
+import 'package:banking_app/core/constants/constants.dart';
 import 'package:banking_app/core/router/app_router.dart';
 import 'package:banking_app/core/services/shared_prefs.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/widgets/splash_screen_body.dart';
@@ -24,7 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationHandler() {
-    bool isOnBoardingSeen = SharedPrefsSingelton.getBool('isOnBoardingSeen');
+    bool isOnBoardingSeen = SharedPrefsSingelton.getBool(
+      kOnBoardingSharedPrefsKey,
+    );
     isOnBoardingSeen == false
         ? Future.delayed(Duration(seconds: 2), () {
             if (!mounted) return;
