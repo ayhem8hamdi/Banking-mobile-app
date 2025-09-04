@@ -1,6 +1,8 @@
+import 'package:banking_app/core/router/app_router.dart';
 import 'package:banking_app/core/utils/app_assets/image_assets.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/widgets/on_boarding_body.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnBoardingPageView extends StatefulWidget {
   const OnBoardingPageView({super.key});
@@ -41,7 +43,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
         curve: Curves.easeInOut,
       );
     } else {
-      // TODO: Navigate to login/home
+      context.goNamed(AppRouter.signInScreen);
     }
   }
 

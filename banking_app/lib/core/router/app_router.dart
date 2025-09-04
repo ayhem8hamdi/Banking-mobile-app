@@ -1,3 +1,4 @@
+import 'package:banking_app/features/auth/presentation/views/sign_in_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/on_boarding_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -5,6 +6,7 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter {
   static const String splashScreen = "splashScreen";
   static const String onBoardingScreen = "onBoardingScreen";
+  static const String signInScreen = "signInScreen";
 
   static final GoRouter goRouter = GoRouter(
     initialLocation: '/splash',
@@ -19,6 +21,11 @@ abstract class AppRouter {
         name: onBoardingScreen,
         path: '/onBoarding',
         builder: (context, state) => OnBoardingScreen(),
+      ),
+      GoRoute(
+        name: signInScreen,
+        path: '/signIn',
+        builder: (context, state) => SignInScreen(),
       ),
 
       /*
