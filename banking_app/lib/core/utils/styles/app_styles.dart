@@ -15,7 +15,7 @@ abstract class AppStyles {
   static TextStyle styleRegular14(BuildContext context) =>
       _baseCairo(context).copyWith(
         color: Theme.of(context).colorScheme.onSecondary,
-        fontSize: ResponsiveFont.responsiveFontSize(context, 14.5),
+        fontSize: ResponsiveFont.responsiveFontSize(context, 14),
         fontWeight: FontWeight.w400,
       );
   static TextStyle styleSemiBold16(BuildContext context) =>
@@ -28,6 +28,13 @@ abstract class AppStyles {
       _baseCairo(context).copyWith(
         color: Theme.of(context).colorScheme.onSurface,
         fontSize: ResponsiveFont.responsiveFontSize(context, 32),
+        fontWeight: FontWeight.w500,
+      );
+
+  static TextStyle styleMeduim14(BuildContext context) =>
+      _baseCairo(context).copyWith(
+        color: Theme.of(context).colorScheme.primary,
+        fontSize: ResponsiveFont.responsiveFontSize(context, 14),
         fontWeight: FontWeight.w500,
       );
 }
