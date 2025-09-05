@@ -15,17 +15,17 @@ abstract class AppRouter {
       GoRoute(
         name: splashScreen,
         path: '/splash',
-        builder: (context, state) => SplashScreen(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         name: onBoardingScreen,
         path: '/onBoarding',
-        builder: (context, state) => OnBoardingScreen(),
+        builder: (context, state) => const OnBoardingScreen(),
       ),
       GoRoute(
         name: signInScreen,
         path: '/signIn',
-        builder: (context, state) => SignInScreen(),
+        builder: (context, state) => const SignInScreen(),
       ),
 
       /*

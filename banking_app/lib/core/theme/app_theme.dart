@@ -5,11 +5,45 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     colorScheme: ThemeColorScheme.lightColorScheme,
+    inputDecorationTheme: AppTheme.buildInputDecorationTheme(
+      cs: ThemeColorScheme.lightColorScheme,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
     colorScheme: ThemeColorScheme.darkColorScheme,
+    inputDecorationTheme: AppTheme.buildInputDecorationTheme(
+      cs: ThemeColorScheme.darkColorScheme,
+    ),
   );
+
+  static InputDecorationTheme buildInputDecorationTheme({
+    required ColorScheme cs,
+  }) {
+    return InputDecorationTheme(
+      hintStyle: TextStyle(
+        fontSize: 13.6,
+        color: cs.onSurface.withOpacity(0.6),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+      border: UnderlineInputBorder(borderSide: BorderSide(color: cs.secondary)),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: cs.primary, width: 2),
+      ),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: cs.secondary),
+      ),
+      errorBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(color: Colors.red, width: 1),
+      ),
+      focusedErrorBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: cs.secondary),
+      ),
+      filled: true,
+      hoverColor: Colors.transparent,
+      focusColor: Colors.transparent,
+    );
+  }
 }
 
 class ThemeColorScheme {
