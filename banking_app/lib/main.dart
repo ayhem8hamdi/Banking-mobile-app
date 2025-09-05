@@ -8,7 +8,9 @@ import 'package:device_preview/device_preview.dart';
 void main() async {
   await SharedPrefsSingelton.init();
   SharedPrefsSingelton.setBool(kOnBoardingSharedPrefsKey, false);
-  runApp(DevicePreview(enabled: true, builder: (context) => BankingApp()));
+  runApp(
+    DevicePreview(enabled: true, builder: (context) => const BankingApp()),
+  );
 }
 
 class BankingApp extends StatelessWidget {
