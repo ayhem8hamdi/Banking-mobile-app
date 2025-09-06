@@ -1,4 +1,10 @@
+import 'package:banking_app/core/shared_widgets/app_button.dart';
+import 'package:banking_app/core/utils/app_assets/image_assets.dart';
+import 'package:banking_app/features/auth/presentation/views/widgets/form_password_field.dart';
+import 'package:banking_app/features/auth/presentation/views/widgets/form_text_field.dart';
+import 'package:banking_app/features/auth/presentation/views/widgets/sign_in_form.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key, this.isSignUp = false});
@@ -37,6 +43,58 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SliverToBoxAdapter(
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const FormLabel(text: "Full Name"),
+            FormTextField(
+              hintText: "Full Name",
+              controller: _nameController,
+              iconAsset: ImageAssets.mail,
+              keyboardType: TextInputType.text,
+              validator: (value) =>
+                  (value == null || value.isEmpty) ? "Enter name" : null,
+            ),
+            const Gap(21),
+            const FormLabel(text: "Phone Number"),
+            FormTextField(
+              hintText: "Phone Number",
+              controller: _phoneNumberController,
+              iconAsset: ImageAssets.phone,
+              keyboardType: TextInputType.number,
+              validator: (value) =>
+                  (value == null || value.isEmpty) ? "Enter number" : null,
+            ),
+            const Gap(21),
+            const FormLabel(text: "Email Address"),
+            FormTextField(
+              hintText: "Email",
+              controller: _emailController,
+              iconAsset: ImageAssets.mail,
+              keyboardType: TextInputType.emailAddress,
+              validator: (value) =>
+                  (value == null || value.isEmpty) ? "Enter email" : null,
+            ),
+            const Gap(21),
+            const FormLabel(text: "Password"),
+            FormPasswordField(
+              hintText: "password",
+              controller: _passwordController,
+              iconAsset: ImageAssets.passwordLock,
+              validator: (value) =>
+                  (value == null || value.isEmpty) ? "Enter password" : null,
+            ),
+            const Gap(40),
+            AppButton(
+              text: widget.isSignUp == false ? "Sign In" : "Sign Up",
+              onPressed: _onSignUpPressed,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
