@@ -19,7 +19,7 @@ class CustomBackgroundStack extends StatelessWidget {
           child: Align(
             alignment: Alignment.topRight,
             child: Padding(
-              padding: const EdgeInsets.only(top: 90),
+              padding: const EdgeInsets.only(top: 120),
               child: SvgPicture.asset(
                 ImageAssets.backgroundBlurEffect,
                 fit: BoxFit.cover,

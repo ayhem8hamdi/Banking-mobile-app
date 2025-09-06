@@ -14,4 +14,7 @@ abstract class ImageAssets {
   static const String user = 'assets/images/user.svg';
   static const String user1 = 'assets/images/user1.svg';
   static const String userPng = 'assets/images/user.png';
+  static const String worldMap = 'assets/images/worldmap.svg';
+  static const String worldMapPng = 'assets/images/worldmap.png';
+  static const String cardLeftIcon = 'assets/images/card_left_icon.svg';
 }
