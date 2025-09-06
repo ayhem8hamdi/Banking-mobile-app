@@ -12,10 +12,11 @@ class NavShell extends StatelessWidget {
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: cs.tertiary,
         type: BottomNavigationBarType.fixed,
         currentIndex: navigationShell.currentIndex,
         selectedItemColor: cs.primary,
-        unselectedItemColor: cs.onTertiary,
+        unselectedItemColor: const Color(0XFF8B8B94),
         showUnselectedLabels: true,
         onTap: (index) {
           navigationShell.goBranch(index);

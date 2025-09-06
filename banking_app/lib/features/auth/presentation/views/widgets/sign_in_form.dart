@@ -1,3 +1,4 @@
+import 'package:banking_app/core/router/app_router.dart';
 import 'package:banking_app/core/shared_widgets/app_button.dart';
 import 'package:banking_app/core/utils/app_assets/image_assets.dart';
 import 'package:banking_app/core/utils/styles/app_styles.dart';
@@ -5,6 +6,7 @@ import 'package:banking_app/features/auth/presentation/views/widgets/form_passwo
 import 'package:banking_app/features/auth/presentation/views/widgets/form_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({super.key});
@@ -31,6 +33,7 @@ class _SignInFormState extends State<SignInForm> {
       final password = _passwordController.text.trim();
       // TODO: call your login cubit/service here + extract Validators
       debugPrint("Logging in with $email / $password");
+      context.goNamed(AppRouter.homeScreen);
     }
   }
 
