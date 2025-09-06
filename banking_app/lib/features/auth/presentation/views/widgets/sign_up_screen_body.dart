@@ -1,3 +1,4 @@
+import 'package:banking_app/features/auth/presentation/views/widgets/already_have_account.dart';
 import 'package:banking_app/features/auth/presentation/views/widgets/auth_custom_app_bar.dart';
 import 'package:banking_app/features/auth/presentation/views/widgets/auth_form_title.dart';
 import 'package:banking_app/features/auth/presentation/views/widgets/sign_up_form.dart';
@@ -18,6 +19,8 @@ class SignUpScreenBody extends StatelessWidget {
           AuthFormTitle(text: "Sign Up"),
           SliverGap(38),
           SignUpForm(isSignUp: true),
+          SliverGap(29),
+          AlreadyHaveAccountSection(),
         ],
       ),
     );
