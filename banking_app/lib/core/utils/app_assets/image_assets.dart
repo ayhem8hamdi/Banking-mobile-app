@@ -9,4 +9,6 @@ abstract class ImageAssets {
   static const String mail = 'assets/images/mail.svg';
   static const String passwordLock = 'assets/images/LockPassword.svg';
   static const String passwordSee = 'assets/images/password_eye.svg';
+  static const String backgroundBlurEffect =
+      'assets/images/back_ground_blur.svg';
 }

@@ -1,3 +1,4 @@
+import 'package:banking_app/features/home/presentation/views/widgets/custom_background_stack.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenBody extends StatelessWidget {
@@ -5,6 +6,6 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(slivers: []);
+    return const CustomBackgroundStack(child: CustomScrollView(slivers: []));
   }
 }
