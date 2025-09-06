@@ -17,4 +17,5 @@ abstract class ImageAssets {
   static const String worldMap = 'assets/images/worldmap.svg';
   static const String worldMapPng = 'assets/images/worldmap.png';
   static const String cardLeftIcon = 'assets/images/card_left_icon.svg';
+  static const String masterCard = 'assets/images/master_card.svg';
 }

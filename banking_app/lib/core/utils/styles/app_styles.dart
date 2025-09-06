@@ -38,6 +38,12 @@ abstract class AppStyles {
         fontSize: ResponsiveFont.responsiveFontSize(context, 13),
         fontWeight: FontWeight.w400,
       );
+  static TextStyle styleRegular9(BuildContext context) =>
+      _baseCairo(context).copyWith(
+        color: Theme.of(context).colorScheme.onSecondary,
+        fontSize: ResponsiveFont.responsiveFontSize(context, 10.5),
+        fontWeight: FontWeight.w400,
+      );
   static TextStyle styleSemiBold16(BuildContext context) =>
       _baseCairo(context).copyWith(
         color: Theme.of(context).colorScheme.onPrimary,
