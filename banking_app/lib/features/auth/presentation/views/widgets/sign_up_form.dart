@@ -51,15 +51,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           const Gap(21),
           const FormLabel(text: "Password"),
-          FormTextField(
-            hintText: "Password",
+          FormPasswordField(
+            hintText: "password",
             controller: _passwordController,
             iconAsset: ImageAssets.passwordLock,
-            obscureText: true,
             validator: (value) =>
                 (value == null || value.isEmpty) ? "Enter password" : null,
           ),
-
           const Gap(40),
           AppButton(text: "Sign In", onPressed: _onLoginPressed),
         ],
