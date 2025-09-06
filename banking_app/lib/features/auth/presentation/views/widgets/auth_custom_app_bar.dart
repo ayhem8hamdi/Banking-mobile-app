@@ -6,7 +6,6 @@ class CustomAuthAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
     return SliverToBoxAdapter(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -19,18 +18,26 @@ class CustomAuthAppBar extends StatelessWidget {
                 // we gonna put flush bar here
               }
             },
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: cs.tertiary,
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                color: cs.onSurface,
-                size: 20,
-              ),
-            ),
+            child: const CustomCircleAvatarIcon(icon: Icons.arrow_back_ios_new),
           ),
         ],
       ),
+    );
+  }
+}
+
+class CustomCircleAvatarIcon extends StatelessWidget {
+  const CustomCircleAvatarIcon({super.key, required this.icon});
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
+    return CircleAvatar(
+      radius: 25,
+      backgroundColor: cs.tertiary,
+      child: Icon(icon, color: cs.onSurface, size: 20),
     );
   }
 }

@@ -11,4 +11,7 @@ abstract class ImageAssets {
   static const String passwordSee = 'assets/images/password_eye.svg';
   static const String backgroundBlurEffect =
       'assets/images/back_ground_blur.svg';
+  static const String user = 'assets/images/user.svg';
+  static const String user1 = 'assets/images/user1.svg';
+  static const String userPng = 'assets/images/user.png';
 }
