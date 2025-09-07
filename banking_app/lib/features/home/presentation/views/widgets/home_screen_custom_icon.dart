@@ -31,7 +31,7 @@ class HomeScreenCustomIcon extends StatelessWidget {
           child: SvgPicture.asset(
             icon,
             fit: BoxFit.contain,
-            color: cs.onSurface, // stays sharp
+            color: cs.onSurface,
           ),
         ),
       ),

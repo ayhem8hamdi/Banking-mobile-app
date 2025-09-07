@@ -2,6 +2,7 @@ import 'package:banking_app/features/home/presentation/views/widgets/card_widget
 import 'package:banking_app/features/home/presentation/views/widgets/custom_background_stack.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/home_app_bar.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/home_transactions_types_row.dart';
+import 'package:banking_app/features/home/presentation/views/widgets/transaction_sliver_list.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/transaction_title.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -24,6 +25,7 @@ class HomeScreenBody extends StatelessWidget {
             SliverGap(28),
             TransactionTitle(),
             SliverGap(19),
+            TransactionsSliverList(),
           ],
         ),
       ),

@@ -1,10 +1,10 @@
-class Transaction {
+class TransactionModel {
   final String transactionTitle,
       transactionType,
       transactionPrice,
       transactionImage;
 
-  const Transaction({
+  const TransactionModel({
     required this.transactionTitle,
     required this.transactionType,
     required this.transactionPrice,

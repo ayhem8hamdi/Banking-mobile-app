@@ -12,18 +12,22 @@ class TransactionsTypeRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          TransactionItem(icon: ImageAssets.sendIcon, text: "Sent"),
-          TransactionItem(icon: ImageAssets.receiveIcon, text: "Receive"),
-          TransactionItem(icon: ImageAssets.loanIcon, text: "Loan"),
-          TransactionItem(icon: ImageAssets.toPupIcon, text: "Topup"),
+          TransactionTypeItem(icon: ImageAssets.sendIcon, text: "Sent"),
+          TransactionTypeItem(icon: ImageAssets.receiveIcon, text: "Receive"),
+          TransactionTypeItem(icon: ImageAssets.loanIcon, text: "Loan"),
+          TransactionTypeItem(icon: ImageAssets.toPupIcon, text: "Topup"),
         ],
       ),
     );
   }
 }
 
-class TransactionItem extends StatelessWidget {
-  const TransactionItem({super.key, required this.icon, required this.text});
+class TransactionTypeItem extends StatelessWidget {
+  const TransactionTypeItem({
+    super.key,
+    required this.icon,
+    required this.text,
+  });
 
   final String icon;
   final String text;
