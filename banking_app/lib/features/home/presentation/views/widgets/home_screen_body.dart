@@ -1,8 +1,8 @@
-import 'package:banking_app/core/utils/styles/app_styles.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/card_widget.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/custom_background_stack.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/home_app_bar.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/home_transactions_types_row.dart';
+import 'package:banking_app/features/home/presentation/views/widgets/transaction_title.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -23,25 +23,9 @@ class HomeScreenBody extends StatelessWidget {
             TransactionsTypeRow(),
             SliverGap(28),
             TransactionTitle(),
+            SliverGap(19),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class TransactionTitle extends StatelessWidget {
-  const TransactionTitle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text("Transaction", style: AppStyles.styleMeduim18(context)),
-          Text("See All", style: AppStyles.styleMeduim14(context)),
-        ],
       ),
     );
   }

@@ -19,10 +19,12 @@ abstract class ImageAssets {
   static const String cardLeftIcon = 'assets/images/card_left_icon.svg';
   static const String masterCard = 'assets/images/master_card.svg';
   static const String sendIcon = 'assets/images/send_icon.svg';
-
   static const String receiveIcon = 'assets/images/receive_icon.svg';
-
   static const String loanIcon = 'assets/images/loan_icon.svg';
-
   static const String toPupIcon = 'assets/images/to_pup.svg';
+  static const String spotifyIcon = 'assets/images/spotify.svg';
+  static const String netflixIcon = 'assets/images/netflix.svg';
+  static const String moneyTransferIcon = 'assets/images/money_transfert.svg';
+  static const String groceryIcon = 'assets/images/grocery.svg';
+  static const String appleIcon = 'assets/images/apple_icon.svg';
 }

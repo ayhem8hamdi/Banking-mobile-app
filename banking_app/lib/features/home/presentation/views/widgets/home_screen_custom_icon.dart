@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeScreenCustomIcon extends StatelessWidget {
-  const HomeScreenCustomIcon({super.key, required this.icon});
+  const HomeScreenCustomIcon({
+    super.key,
+    required this.icon,
+    this.padding = 23,
+  });
   final String icon;
+  final double? padding;
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
@@ -21,7 +26,7 @@ class HomeScreenCustomIcon extends StatelessWidget {
           padding: EdgeInsets.all(
             icon == ImageAssets.loanIcon || icon == ImageAssets.toPupIcon
                 ? 19
-                : 23,
+                : padding!,
           ),
           child: SvgPicture.asset(
             icon,
