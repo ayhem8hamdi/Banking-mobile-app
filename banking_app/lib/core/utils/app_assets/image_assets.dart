@@ -18,4 +18,11 @@ abstract class ImageAssets {
   static const String worldMapPng = 'assets/images/worldmap.png';
   static const String cardLeftIcon = 'assets/images/card_left_icon.svg';
   static const String masterCard = 'assets/images/master_card.svg';
+  static const String sendIcon = 'assets/images/send_icon.svg';
+
+  static const String receiveIcon = 'assets/images/receive_icon.svg';
+
+  static const String loanIcon = 'assets/images/loan_icon.svg';
+
+  static const String toPupIcon = 'assets/images/to_pup.svg';
 }
