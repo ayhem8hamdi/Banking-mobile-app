@@ -1,7 +1,5 @@
-import 'package:banking_app/core/utils/styles/app_styles.dart';
-import 'package:banking_app/features/auth/presentation/views/widgets/auth_custom_app_bar.dart';
+import 'package:banking_app/features/home/presentation/views/widgets/card_widget.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/custom_background_stack.dart';
-import 'package:banking_app/features/home/presentation/views/widgets/home_app_bar.dart';
 import 'package:banking_app/features/stats/presentation/views/widgets/stats_custom_app_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +21,8 @@ class StatsScreenBody extends StatelessWidget {
               rightIcon: CupertinoIcons.add,
             ),
             SliverGap(32),
+            CardWidget(),
+            SliverGap(30),
           ],
         ),
       ),

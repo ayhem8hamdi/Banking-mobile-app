@@ -17,10 +17,10 @@ class HomeScreenCustomIcon extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     return ClipOval(
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 0.3, sigmaY: 0.3),
+        filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
         child: Container(
           decoration: BoxDecoration(
-            color: cs.tertiary.withOpacity(0.75),
+            color: cs.tertiary.withOpacity(0.60),
             shape: BoxShape.circle,
           ),
           padding: EdgeInsets.all(
