@@ -9,7 +9,7 @@ void main() async {
   await SharedPrefsSingelton.init();
   SharedPrefsSingelton.setBool(kOnBoardingSharedPrefsKey, false);
   runApp(
-    DevicePreview(enabled: false, builder: (context) => const BankingApp()),
+    DevicePreview(enabled: true, builder: (context) => const BankingApp()),
   );
 }
 

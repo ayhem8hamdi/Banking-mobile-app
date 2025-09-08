@@ -4,6 +4,7 @@ import 'package:banking_app/features/auth/presentation/views/sign_up_screen.dart
 import 'package:banking_app/features/home/presentation/views/home_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/on_boarding_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/splash_screen.dart';
+import 'package:banking_app/features/stats/presentation/views/stats_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -82,8 +83,7 @@ abstract class AppRouter {
               GoRoute(
                 name: statsScreen,
                 path: '/stats',
-                builder: (context, state) =>
-                    const Scaffold(body: Center(child: Text('stats'))),
+                builder: (context, state) => const StatsScreen(),
               ),
             ],
           ),
