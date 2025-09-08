@@ -37,6 +37,7 @@ class StatsScreenBody extends StatelessWidget {
             MonthlySpendingTitle(),
             SliverGap(19),
             MonthlySpendingRangeContainer(),
+            SliverGap(19),
           ],
         ),
       ),
@@ -52,7 +53,12 @@ class MonthlySpendingRangeContainer extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 23),
+        padding: const EdgeInsets.only(
+          left: 24,
+          right: 24,
+          top: 23,
+          bottom: 39,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: cs.tertiary,
@@ -60,13 +66,16 @@ class MonthlySpendingRangeContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              r"Amount: $8,545.00",
-              style: AppStyles.styleRegular13(
-                context,
-              ).copyWith(color: cs.onSurface),
+            Padding(
+              padding: const EdgeInsets.only(left: 13),
+              child: Text(
+                r"Amount: $8,545.00",
+                style: AppStyles.styleRegular13(
+                  context,
+                ).copyWith(color: cs.onSurface),
+              ),
             ),
-            const Gap(11),
+            const Gap(27),
             const SingleValueSlider(),
           ],
         ),
@@ -109,10 +118,10 @@ class _SingleValueSliderState extends State<SingleValueSlider> {
                 thumbColor: Colors.white,
                 overlayColor: cs.primary,
                 thumbShape: const RoundSliderThumbShape(
-                  enabledThumbRadius: 8,
-                  disabledThumbRadius: 8,
+                  enabledThumbRadius: 10,
+                  disabledThumbRadius: 10,
                 ),
-                overlayShape: const RoundSliderOverlayShape(overlayRadius: 11),
+                overlayShape: const RoundSliderOverlayShape(overlayRadius: 13),
               ),
               child: Slider(
                 value: _currentValue,
@@ -129,7 +138,7 @@ class _SingleValueSliderState extends State<SingleValueSlider> {
 
             Positioned(
               left: thumbX,
-              bottom: -14,
+              bottom: 29,
               child: Text(
                 "\$${_currentValue.round().toString()}",
                 style: AppStyles.styleRegular12(
@@ -140,13 +149,13 @@ class _SingleValueSliderState extends State<SingleValueSlider> {
 
             Positioned(
               left: 9,
-              bottom: 20,
+              bottom: -20,
               child: Text(r"$0", style: AppStyles.styleRegular12(context)),
             ),
 
             Positioned(
               right: 10,
-              bottom: 20,
+              bottom: -20,
               child: Text(r"$10,000", style: AppStyles.styleRegular12(context)),
             ),
           ],
