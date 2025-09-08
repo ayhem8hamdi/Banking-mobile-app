@@ -18,6 +18,7 @@ class TransactionItem extends StatelessWidget {
         ),
         const Gap(17),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               transactionModel.transactionTitle,

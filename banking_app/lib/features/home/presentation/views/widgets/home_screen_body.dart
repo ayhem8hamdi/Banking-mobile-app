@@ -23,7 +23,7 @@ class HomeScreenBody extends StatelessWidget {
             SliverGap(30),
             TransactionsTypeRow(),
             SliverGap(28),
-            TransactionTitle(),
+            TransactionTitle(leftText: "Transaction", rightText: "Sell All"),
             SliverGap(19),
             TransactionsSliverList(),
           ],

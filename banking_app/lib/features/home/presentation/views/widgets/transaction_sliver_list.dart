@@ -4,7 +4,8 @@ import 'package:banking_app/features/home/presentation/views/widgets/transaction
 import 'package:flutter/material.dart';
 
 class TransactionsSliverList extends StatelessWidget {
-  const TransactionsSliverList({super.key});
+  const TransactionsSliverList({super.key, this.count});
+  final int? count;
   static final List<TransactionModel> list = const [
     TransactionModel(
       transactionTitle: "Apple Store",
@@ -52,7 +53,7 @@ class TransactionsSliverList extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 22),
           child: TransactionItem(transactionModel: list[index]),
         );
-      }, childCount: list.length),
+      }, childCount: count ?? list.length),
     );
   }
 }

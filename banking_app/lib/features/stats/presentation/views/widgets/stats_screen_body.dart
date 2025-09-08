@@ -1,5 +1,7 @@
 import 'package:banking_app/features/home/presentation/views/widgets/card_widget.dart';
 import 'package:banking_app/features/home/presentation/views/widgets/custom_background_stack.dart';
+import 'package:banking_app/features/home/presentation/views/widgets/transaction_sliver_list.dart';
+import 'package:banking_app/features/home/presentation/views/widgets/transaction_title.dart';
 import 'package:banking_app/features/stats/presentation/views/widgets/stats_custom_app_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +25,13 @@ class StatsScreenBody extends StatelessWidget {
             SliverGap(32),
             CardWidget(),
             SliverGap(30),
+            TransactionTitle(
+              leftText: "Latest Transaction",
+              rightText: "See All",
+            ),
+            SliverGap(21),
+            TransactionsSliverList(count: 3),
+            SliverGap(29),
           ],
         ),
       ),
