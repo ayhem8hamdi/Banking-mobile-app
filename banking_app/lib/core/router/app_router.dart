@@ -2,6 +2,7 @@ import 'package:banking_app/core/shared_widgets/bottom_nav_tab.dart';
 import 'package:banking_app/features/auth/presentation/views/sign_in_screen.dart';
 import 'package:banking_app/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:banking_app/features/home/presentation/views/home_screen.dart';
+import 'package:banking_app/features/settings/presentation/views/settings_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/on_boarding_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/splash_screen.dart';
 import 'package:banking_app/features/stats/presentation/views/stats_screen.dart';
@@ -92,8 +93,7 @@ abstract class AppRouter {
               GoRoute(
                 name: settingsScreen,
                 path: '/params',
-                builder: (context, state) =>
-                    const Scaffold(body: Center(child: Text('params'))),
+                builder: (context, state) => const SettingsScreen(),
               ),
             ],
           ),
