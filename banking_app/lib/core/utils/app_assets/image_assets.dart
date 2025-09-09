@@ -27,4 +27,11 @@ abstract class ImageAssets {
   static const String moneyTransferIcon = 'assets/images/money_transfert.svg';
   static const String groceryIcon = 'assets/images/grocery.svg';
   static const String appleIcon = 'assets/images/apple_icon.svg';
+  static const String userProfile = 'assets/images/user_profile.svg';
+  static const String settings = 'assets/images/settings.svg';
+  static const String paymentPrefs = 'assets/images/payment_prefs.svg';
+  static const String notifications = 'assets/images/notif.svg';
+  static const String messagesCenter = 'assets/images/message_center.svg';
+  static const String location = 'assets/images/location.svg';
+  static const String banksAndCards = 'assets/images/banks_and_card.svg';
 }
