@@ -1,4 +1,5 @@
-import 'package:banking_app/core/utils/styles/app_styles.dart';
+import 'package:banking_app/features/settings/domain/settings_options_model.dart';
+import 'package:banking_app/features/settings/presentation/widget/setting_option_item.dart';
 import 'package:banking_app/features/settings/presentation/widget/settings_titles.dart';
 import 'package:banking_app/features/stats/presentation/views/widgets/stats_custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -20,55 +21,32 @@ class SettingsScreenBody extends StatelessWidget {
           ),
           SliverGap(32),
           SettingsTitles(text: "General"),
-          SliverGap(28),
-          SettingsOptionItem(),
+          SliverGap(23),
+          GeneralSettingsOptionsBuilder(),
         ],
       ),
     );
   }
 }
 
-class SettingsOptionItem extends StatelessWidget {
-  const SettingsOptionItem({super.key});
+class GeneralSettingsOptionsBuilder extends StatelessWidget {
+  const GeneralSettingsOptionsBuilder({super.key});
 
+  static final List<SettingsOptionsModel> list = const [
+    SettingsOptionsModel(settingOption: "Language", language: "English"),
+    SettingsOptionsModel(settingOption: "My Profile"),
+    SettingsOptionsModel(settingOption: "Contact Us"),
+  ];
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
     return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              children: [
-                Text(
-                  "Language",
-                  style: AppStyles.styleMeduim14(
-                    context,
-                  ).copyWith(color: cs.onSurface),
-                ),
-                const Spacer(),
-                Text(
-                  "English",
-                  style: AppStyles.styleMeduim14(
-                    context,
-                  ).copyWith(color: const Color(0XFF7E848D)),
-                ),
-                const Gap(16),
-                Transform.rotate(
-                  angle: 3.1416,
-                  child: const Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    size: 20,
-                    color: Color(0XFF7E848D),
-                  ),
-                ),
-              ],
-            ),
-            const Gap(14),
-            Container(height: 1, color: cs.outline),
-          ],
+      child: Column(
+        children: List.generate(
+          3,
+          (index) => Padding(
+            padding: const EdgeInsets.only(bottom: 22),
+            child: SettingsOptionItem(settingsOptionsModel: list[index]),
+          ),
         ),
       ),
     );

@@ -10,44 +10,42 @@ class SettingsOptionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              children: [
-                Text(
-                  settingsOptionsModel.settingOption,
-                  style: AppStyles.styleMeduim14(
-                    context,
-                  ).copyWith(color: cs.onSurface),
+    return Padding(
+      padding: const EdgeInsets.only(left: 5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Text(
+                settingsOptionsModel.settingOption,
+                style: AppStyles.styleMeduim14(
+                  context,
+                ).copyWith(color: cs.onSurface),
+              ),
+              const Spacer(),
+              Text(
+                settingsOptionsModel.language ?? "",
+                style: AppStyles.styleMeduim14(
+                  context,
+                ).copyWith(color: const Color(0XFF7E848D)),
+              ),
+              const Gap(16),
+              Transform.rotate(
+                angle: 3.1416,
+                child: const Icon(
+                  Icons.arrow_back_ios_new_outlined,
+                  size: 20,
+                  color: Color(0XFF7E848D),
                 ),
-                const Spacer(),
-                Text(
-                  settingsOptionsModel.language ?? "",
-                  style: AppStyles.styleMeduim14(
-                    context,
-                  ).copyWith(color: const Color(0XFF7E848D)),
-                ),
-                const Gap(16),
-                Transform.rotate(
-                  angle: 3.1416,
-                  child: const Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    size: 20,
-                    color: Color(0XFF7E848D),
-                  ),
-                ),
-              ],
-            ),
-            const Gap(14),
-            settingsOptionsModel.isLast == true
-                ? const SizedBox.shrink()
-                : Container(height: 1, color: cs.outline),
-          ],
-        ),
+              ),
+            ],
+          ),
+          const Gap(14),
+          settingsOptionsModel.isLast == true
+              ? const SizedBox.shrink()
+              : Container(height: 1, color: cs.outline),
+        ],
       ),
     );
   }
