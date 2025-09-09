@@ -15,31 +15,34 @@ class SettingsOptionItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              Text(
-                settingsOptionsModel.settingOption,
-                style: AppStyles.styleMeduim14(
-                  context,
-                ).copyWith(color: cs.onSurface),
-              ),
-              const Spacer(),
-              Text(
-                settingsOptionsModel.language ?? "",
-                style: AppStyles.styleMeduim14(
-                  context,
-                ).copyWith(color: const Color(0XFF7E848D)),
-              ),
-              const Gap(16),
-              Transform.rotate(
-                angle: 3.1416,
-                child: const Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  size: 20,
-                  color: Color(0XFF7E848D),
+          GestureDetector(
+            onTap: settingsOptionsModel.onTap,
+            child: Row(
+              children: [
+                Text(
+                  settingsOptionsModel.settingOption,
+                  style: AppStyles.styleMeduim14(
+                    context,
+                  ).copyWith(color: cs.onSurface),
                 ),
-              ),
-            ],
+                const Spacer(),
+                Text(
+                  settingsOptionsModel.language ?? "",
+                  style: AppStyles.styleMeduim14(
+                    context,
+                  ).copyWith(color: const Color(0XFF7E848D)),
+                ),
+                const Gap(16),
+                Transform.rotate(
+                  angle: 3.1416,
+                  child: const Icon(
+                    Icons.arrow_back_ios_new_outlined,
+                    size: 20,
+                    color: Color(0XFF7E848D),
+                  ),
+                ),
+              ],
+            ),
           ),
           const Gap(14),
           settingsOptionsModel.isLast == true

@@ -1,0 +1,23 @@
+import 'package:banking_app/features/stats/presentation/views/widgets/stats_custom_app_bar.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class ProfileScreenBody extends StatelessWidget {
+  const ProfileScreenBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 22),
+      child: CustomScrollView(
+        slivers: [
+          StatsCustomAppBar(
+            text: "Profile",
+            leftIcon: Icons.arrow_back_ios_new,
+            rightIcon: Icons.manage_accounts_outlined,
+          ),
+        ],
+      ),
+    );
+  }
+}
