@@ -59,6 +59,7 @@ class ThemeColorScheme {
     onError: Colors.black,
     surface: AppDarkColors.surfaceColor,
     onSurface: AppDarkColors.onSurfaceColor,
+    outline: AppDarkColors.lineColor,
   );
 
   static ColorScheme lightColorScheme = ColorScheme(
@@ -73,5 +74,6 @@ class ThemeColorScheme {
     onError: Colors.black,
     surface: AppLightColors.surfaceColor,
     onSurface: AppLightColors.onSurfaceColor,
+    outline: AppLightColors.lineColor,
   );
 }

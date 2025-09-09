@@ -9,4 +9,5 @@ abstract class AppDarkColors {
   static Color onThirdColor = const Color(0XFF8B8B94);
   static Color surfaceColor = const Color(0XFF161622);
   static Color onSurfaceColor = const Color(0XFFFFFFFF);
+  static Color lineColor = const Color(0XFF232533);
 }
