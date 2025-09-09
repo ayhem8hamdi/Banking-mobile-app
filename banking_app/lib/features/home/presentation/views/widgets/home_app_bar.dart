@@ -28,13 +28,13 @@ class HomeAppBar extends StatelessWidget {
 }
 
 class AppBarImage extends StatelessWidget {
-  const AppBarImage({super.key});
-
+  const AppBarImage({super.key, this.size});
+  final double? size;
   @override
   Widget build(BuildContext context) {
-    return const ResponsiveImage(
-      imageProvider: AssetImage(ImageAssets.userPng),
-      imageDesignWidth: 55,
+    return ResponsiveImage(
+      imageProvider: const AssetImage(ImageAssets.userPng),
+      imageDesignWidth: size ?? 55,
       screenDesignWidth: 375.5,
       imageDesignAspectRatio: 1,
     );
