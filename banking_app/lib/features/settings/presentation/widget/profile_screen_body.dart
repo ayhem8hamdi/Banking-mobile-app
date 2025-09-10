@@ -1,4 +1,5 @@
 import 'package:banking_app/core/utils/app_assets/image_assets.dart';
+import 'package:banking_app/core/utils/styles/app_styles.dart';
 import 'package:banking_app/features/settings/domain/profile_options_model.dart';
 import 'package:banking_app/features/settings/presentation/widget/profile_options_item.dart';
 import 'package:banking_app/features/settings/presentation/widget/user_image_and_name.dart';
@@ -48,13 +49,18 @@ class ProfileOptionsListBuilder extends StatelessWidget {
     ProfileOptionsModel(
       icon: ImageAssets.notifications,
       title: "Notifications",
+      isNotif: true,
     ),
     ProfileOptionsModel(
       icon: ImageAssets.messagesCenter,
       title: "Message Center",
     ),
     ProfileOptionsModel(icon: ImageAssets.location, title: "Address"),
-    ProfileOptionsModel(icon: ImageAssets.settings, title: "Settings"),
+    ProfileOptionsModel(
+      icon: ImageAssets.settings,
+      title: "Settings",
+      isLast: true,
+    ),
   ];
   @override
   Widget build(BuildContext context) {

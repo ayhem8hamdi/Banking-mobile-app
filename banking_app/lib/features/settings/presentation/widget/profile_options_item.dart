@@ -26,20 +26,35 @@ class ProfileOptionsItem extends StatelessWidget {
                 ).copyWith(color: cs.onSurface),
               ),
               const Spacer(),
-
-              Transform.rotate(
-                angle: 3.1416,
-                child: const Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  size: 20,
-                  color: Color(0XFF7E848D),
-                ),
-              ),
+              profileOptionsModel.isNotif == true
+                  ? Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2.5,
+                      ),
+                      child: Text(
+                        "2",
+                        style: AppStyles.styleRegular11(context),
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0XFFEB0A24),
+                        shape: BoxShape.circle,
+                      ),
+                    )
+                  : Transform.rotate(
+                      angle: 3.1416,
+                      child: const Icon(
+                        Icons.arrow_back_ios_new_outlined,
+                        size: 20,
+                        color: Color(0XFF7E848D),
+                      ),
+                    ),
             ],
           ),
           const Gap(14),
-
-          Container(height: 1, color: cs.outline),
+          profileOptionsModel.isLast == true
+              ? const SizedBox.shrink()
+              : Container(height: 1, color: cs.outline),
         ],
       ),
     );
