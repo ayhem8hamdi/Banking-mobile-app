@@ -7,11 +7,11 @@ class StatsCustomAppBar extends StatelessWidget {
   const StatsCustomAppBar({
     super.key,
     required this.text,
-    required this.leftIcon,
-    required this.rightIcon,
+    this.leftIcon,
+    this.rightIcon,
   });
   final String text;
-  final IconData leftIcon, rightIcon;
+  final IconData? leftIcon, rightIcon;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -28,7 +28,9 @@ class StatsCustomAppBar extends StatelessWidget {
                   // we gonna put flush bar here
                 }
               },
-              child: CustomCircleAvatarIcon(icon: leftIcon),
+              child: leftIcon == null
+                  ? const SizedBox.shrink()
+                  : CustomCircleAvatarIcon(icon: leftIcon!),
             ),
             Text(text, style: AppStyles.styleMeduim18(context)),
             CustomCircleAvatarIcon(icon: rightIcon),

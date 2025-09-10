@@ -2,6 +2,7 @@ import 'package:banking_app/core/shared_widgets/bottom_nav_tab.dart';
 import 'package:banking_app/features/auth/presentation/views/sign_in_screen.dart';
 import 'package:banking_app/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:banking_app/features/home/presentation/views/home_screen.dart';
+import 'package:banking_app/features/settings/presentation/views/edit_profile_screen.dart';
 import 'package:banking_app/features/settings/presentation/views/profile_screen.dart';
 import 'package:banking_app/features/settings/presentation/views/settings_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/on_boarding_screen.dart';
@@ -20,6 +21,7 @@ abstract class AppRouter {
   static const String statsScreen = "statsScreen";
   static const String settingsScreen = "settingsScreen";
   static const String profileScreen = "profileScreen";
+  static const String editProfileScreen = "editProfileScreen";
 
   static final GoRouter goRouter = GoRouter(
     initialLocation: '/splash',
@@ -50,6 +52,11 @@ abstract class AppRouter {
         name: profileScreen,
         path: '/profile',
         builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        name: editProfileScreen,
+        path: '/editProfile',
+        builder: (context, state) => const EditProfileScreen(),
       ),
 
       // bottom Tabs Navigation

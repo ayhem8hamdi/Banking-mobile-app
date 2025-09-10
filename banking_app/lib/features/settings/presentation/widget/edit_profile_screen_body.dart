@@ -1,11 +1,9 @@
-import 'package:banking_app/features/settings/presentation/widget/profile_options_list_builder.dart';
-import 'package:banking_app/features/settings/presentation/widget/user_image_and_name.dart';
 import 'package:banking_app/features/stats/presentation/views/widgets/stats_custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class ProfileScreenBody extends StatelessWidget {
-  const ProfileScreenBody({super.key});
+class EditProfileScreenBody extends StatelessWidget {
+  const EditProfileScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +12,10 @@ class ProfileScreenBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           StatsCustomAppBar(
-            text: "Profile",
+            text: "Edit Profile",
             leftIcon: Icons.arrow_back_ios_new,
-            rightIcon: Icons.manage_accounts_outlined,
           ),
           SliverGap(32),
-          UserImageAndName(),
-          SliverGap(32),
-          ProfileOptionsListBuilder(),
         ],
       ),
     );

@@ -27,17 +27,19 @@ class CustomAuthAppBar extends StatelessWidget {
 }
 
 class CustomCircleAvatarIcon extends StatelessWidget {
-  const CustomCircleAvatarIcon({super.key, required this.icon});
-  final IconData icon;
+  const CustomCircleAvatarIcon({super.key, this.icon});
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    return CircleAvatar(
-      radius: 25,
-      backgroundColor: cs.tertiary,
-      child: Icon(icon, color: cs.onSurface, size: 20),
-    );
+    return icon == null
+        ? const CircleAvatar(radius: 25, backgroundColor: Colors.transparent)
+        : CircleAvatar(
+            radius: 25,
+            backgroundColor: cs.tertiary,
+            child: Icon(icon, color: cs.onSurface, size: 20),
+          );
   }
 }
