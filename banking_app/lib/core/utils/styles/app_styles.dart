@@ -81,4 +81,10 @@ abstract class AppStyles {
         fontSize: ResponsiveFont.responsiveFontSize(context, 18),
         fontWeight: FontWeight.w500,
       );
+  static TextStyle styleMeduim17(BuildContext context) =>
+      _baseCairo(context).copyWith(
+        color: Theme.of(context).colorScheme.onSurface,
+        fontSize: ResponsiveFont.responsiveFontSize(context, 17),
+        fontWeight: FontWeight.w500,
+      );
 }
