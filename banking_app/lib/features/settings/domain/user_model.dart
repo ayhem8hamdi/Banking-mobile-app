@@ -1,11 +1,10 @@
 class UserModel {
-  final String userName, email, birthMonth, birthDay, birthYear;
+  final String fieldData, hintText, fieldTitle, icon;
 
-  const UserModel({
-    required this.userName,
-    required this.email,
-    required this.birthMonth,
-    required this.birthDay,
-    required this.birthYear,
+  const UserModel(
+    this.hintText,
+    this.fieldTitle,
+    this.icon, {
+    required this.fieldData,
   });
 }
