@@ -2,13 +2,13 @@ import 'package:banking_app/core/shared_widgets/bottom_nav_tab.dart';
 import 'package:banking_app/features/auth/presentation/views/sign_in_screen.dart';
 import 'package:banking_app/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:banking_app/features/home/presentation/views/home_screen.dart';
+import 'package:banking_app/features/my_cards/presentation/views/my_cards_screen.dart';
 import 'package:banking_app/features/settings/presentation/views/edit_profile_screen.dart';
 import 'package:banking_app/features/settings/presentation/views/profile_screen.dart';
 import 'package:banking_app/features/settings/presentation/views/settings_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/on_boarding_screen.dart';
 import 'package:banking_app/features/splash_onboarding/presentation/views/splash_screen.dart';
 import 'package:banking_app/features/stats/presentation/views/stats_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -22,6 +22,7 @@ abstract class AppRouter {
   static const String settingsScreen = "settingsScreen";
   static const String profileScreen = "profileScreen";
   static const String editProfileScreen = "editProfileScreen";
+  static const String termsAndConditions = "termsAndConditions";
 
   static final GoRouter goRouter = GoRouter(
     initialLocation: '/splash',
@@ -58,6 +59,11 @@ abstract class AppRouter {
         path: '/editProfile',
         builder: (context, state) => const EditProfileScreen(),
       ),
+      GoRoute(
+        name: termsAndConditions,
+        path: '/termsAndConditions',
+        builder: (context, state) => const EditProfileScreen(),
+      ),
 
       // bottom Tabs Navigation
       StatefulShellRoute.indexedStack(
@@ -88,8 +94,7 @@ abstract class AppRouter {
               GoRoute(
                 name: myCardsScreen,
                 path: '/carts',
-                builder: (context, state) =>
-                    const Scaffold(body: Center(child: Text('carts'))),
+                builder: (context, state) => const MyCardsScreen(),
               ),
             ],
           ),
