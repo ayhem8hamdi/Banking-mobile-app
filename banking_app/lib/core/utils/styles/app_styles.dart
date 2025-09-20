@@ -1,3 +1,4 @@
+import 'package:banking_app/core/theme/colors/dark_colors.dart';
 import 'package:banking_app/core/utils/styles/responsive_font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,6 +49,12 @@ abstract class AppStyles {
       _baseCairo(context).copyWith(
         color: const Color(0XFFFFFFFF),
         fontSize: ResponsiveFont.responsiveFontSize(context, 11),
+        fontWeight: FontWeight.w400,
+      );
+  static TextStyle styleRegular18(BuildContext context) =>
+      _baseCairo(context).copyWith(
+        color: const Color(0XFFA2A2A7),
+        fontSize: ResponsiveFont.responsiveFontSize(context, 18),
         fontWeight: FontWeight.w400,
       );
   static TextStyle styleSemiBold16(BuildContext context) =>
