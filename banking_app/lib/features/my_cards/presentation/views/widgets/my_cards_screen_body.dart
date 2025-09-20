@@ -1,3 +1,4 @@
+import 'package:banking_app/features/my_cards/presentation/views/widgets/balance_line_chart.dart';
 import 'package:banking_app/features/my_cards/presentation/views/widgets/current_balance_title.dart';
 import 'package:banking_app/features/stats/presentation/views/widgets/stats_custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,8 @@ class MyCardsScreenBody extends StatelessWidget {
           ),
           SliverGap(32),
           CurrentBalanceTitle(),
+          SliverGap(10),
+          BalanceContent(),
         ],
       ),
     );
